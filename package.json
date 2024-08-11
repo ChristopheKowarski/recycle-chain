@@ -13,11 +13,18 @@
       "**/nestjs/**"
     ]
   },
-  "dependencies": {
-    "nest": "^0.1.6",
-    "npx": "^10.2.2"
-  },
   "devDependencies": {
-    "husky": "^4.3.8"
+    "prettier": "^3.3.3",
+    "nx": "19.5.7",
+    "husky": "^8.0.0"
+  },
+  "scripts": {
+    "format": "prettier \"{apps,libs,standalone}/**/*.{ts,tsx,js,json}\" --ignore-path .gitignore",
+    "format:check": "yarn format --check",
+    "format:write": "yarn format --write",
+    "tsc": "yarn nx run-many -t tsc",
+    "lint": "yarn nx run-many -t lint",
+    "validate": "yarn format:write && yarn lint && yarn tsc",
+    "prepare": "husky install"
   }
 }
