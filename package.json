@@ -1,0 +1,23 @@
+{
+  "name": "recycle-chain",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "apps/*",
+      "libs/*"
+    ],
+    "nohoist": [
+      "**/@nestjs",
+      "**/nestjs/**"
+    ]
+  },
+  "dependencies": {
+    "nest": "^0.1.6",
+    "npx": "^10.2.2"
+  },
+  "devDependencies": {
+    "husky": "^4.3.8"
+  }
+}
